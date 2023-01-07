@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Collection</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-2 font-sans" style="font-family: 'Poppins', sans-serif">
+  <input id="add_game" type="button" value="add game"
+    class="border-1 rounded bg-lime-400 hover:bg-lime-300 text-xl p-2 mb-2 cursor-pointer ">
+
+  <div id="collection_list">
+    <form id="add_game_form" class="grid items-center border-2 rounded bg-gray-200 m-1 w-2/5 p-2 m-2 mb-4 text-xl"
+      style="display: none;">
+      <label for="title">Game title</label>
+      <input id="title" type="text" name="title" class="border-2 rounded">
+
+      <label for="time">Played time</label>
+      <input id="time" type="number" min="1" max="10000" name="time" class="border-2 rounded">
+
+      <label for="ganre">Ganre</label>
+      <input id="ganre" list="ganre_list" type="text" name="ganre" class="border-2 rounded">
+      <datalist id="ganre_list">
+        <option value="shooter">
+        <option value="rpg">
+        <option value="jrpg">
+        <option value="platformer">
+        <option value="fighting">
+      </datalist>
+
+      <label for="age">Age</label>
+      <input id="age" type="number" list="age_list" min="3" max="18" placeholder="3-18" name="age"
+        class="border-2 rounded">
+      <datalist id="age_list">
+        <option value="3">
+        <option value="7">
+        <option value="12">
+        <option value="16">
+        <option value="18">
+      </datalist>
+
+      <label for="rating">Rating</label>
+      <input id="rating" list="raiting_list" type="number" min="1" max="5" placeholder="1-5" name="rating"
+        class="border-2 rounded">
+      <datalist id="raiting_list">
+        <option value="1">
+        <option value="2">
+        <option value="3">
+        <option value="4">
+        <option value="5">
+      </datalist>
+
+      <input id="add_game_form_submit" type="submit" value="save"
+        class="border-1 rounded bg-lime-400 hover:bg-lime-300 p-2 m-2 mt-3 cursor-pointer">
+    </form>
+
+    <div id="collection_list_top" class="grid grid-cols-5 p-3 rounded text-2xl bg-amber-300 cursor-default">
+      <div id="collection_list_top_item">Title</div>
+      <div id="collection_list_top_item">Time to beat</div>
+      <div id="collection_list_top_item">Ganre</div>
+      <div id="collection_list_top_item">Age</div>
+      <div id="collection_list_top_item">Rating</div>
+    </div>
+
+    <div id="collection_list_game"></div>
+  </div>
+
+  <button id="clear"
+    class="fixed right-0 bottom-0 rounded borfer-2 p-5 pt-3 pb-3 m-4 cursor-pointer transition ease-in-out delay-150 bg-red-400 hover:-translate-y-1 hover:scale-110 duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+      class="w-8 h-8">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
